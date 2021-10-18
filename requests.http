@@ -1,0 +1,8 @@
+POST http://localhost:3333/api/v1/fisical-person
+Content-Type: application/json
+
+{
+  "name": "Luis Eduardo",
+  "email": "luis.ratis04@gmail.com",
+  "password": "luis.ratis04"
+}
