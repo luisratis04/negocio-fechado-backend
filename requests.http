@@ -27,3 +27,12 @@ Content-Type: application/json
   "description": "O comércio varejista de mercadorias em geral, com predominância de produtos alimentícios é a classe que se encontram os supermercados (tecnicamente, com área de venda variando de trezentos a cinco mil metros quadrados). Atendem o público em geral, especialmente pessoas físicas. Apesar dos produtos alimentícios representarem a principal categoria comercial, também comercializam produtos de higiene e limpeza, vestuário, ferragens, utensílios domésticos e até mesmo eletroeletrônicos e eletrodomésticos.",
   "legal_person_id": "1"
 }
+
+###
+POST http://localhost:3333/api/v1/hire
+Content-Type: application/json
+
+{
+  "service_id": "1",
+  "fisical_person_id": "1"
+}

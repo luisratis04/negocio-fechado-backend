@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { IService } from "../interfaces/service";
 import ServiceModel from "../models/service";
 
-export default class FisicalPersonController {
+export default class ServiceController {
   async create(request: Request, response: Response) {
     const { title, description, legal_person_id } = request.body as IService;
     const serviceModel = new ServiceModel();

@@ -1,7 +1,7 @@
 import connection from "../database/connection";
 import { IService } from "../interfaces/service";
 
-export default class FisicalPersonModel {
+export default class Service {
   async create({
     title,
     description,

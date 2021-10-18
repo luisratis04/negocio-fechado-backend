@@ -1,7 +1,7 @@
 import connection from "../database/connection";
 import { ILegalPerson } from "../interfaces/legalPerson";
 
-export default class FisicalPersonModel {
+export default class LegalPersonModel {
   async create({
     name,
     email,

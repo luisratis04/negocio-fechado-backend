@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ILegalPerson } from "../interfaces/legalPerson";
 import LegalPersonModel from "../models/legalPerson";
 
-export default class FisicalPersonController {
+export default class LegalPersonController {
   async create(request: Request, response: Response) {
     const { name, email, password, cnpj } = request.body as ILegalPerson;
     const legalPersonModel = new LegalPersonModel();
