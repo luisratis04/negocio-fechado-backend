@@ -20,13 +20,14 @@ export default class ServiceController {
   }
 
   async create(request: Request, response: Response) {
-    const { title, description, legal_person_id } = request.body as IService;
+    const { title, description, legal_person_id, value } = request.body as IService;
     const serviceModel = new ServiceModel();
 
     const success = await serviceModel.create({
       title,
       description,
       legal_person_id,
+      value
     });
 
     if (success) return response.sendStatus(201);

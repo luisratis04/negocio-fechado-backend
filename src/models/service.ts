@@ -45,12 +45,14 @@ export default class Service {
     title,
     description,
     legal_person_id,
+    value
   }: IService): Promise<boolean> {
     try {
       await connection("service").insert({
         title,
         description,
         legal_person_id,
+        value
       });
       return true;
     } catch (error) {

@@ -46,7 +46,8 @@ Content-Type: application/json
 {
   "title": "Venda de alimentos",
   "description": "O comércio varejista de mercadorias em geral, com predominância de produtos alimentícios é a classe que se encontram os supermercados (tecnicamente, com área de venda variando de trezentos a cinco mil metros quadrados). Atendem o público em geral, especialmente pessoas físicas. Apesar dos produtos alimentícios representarem a principal categoria comercial, também comercializam produtos de higiene e limpeza, vestuário, ferragens, utensílios domésticos e até mesmo eletroeletrônicos e eletrodomésticos.",
-  "legal_person_id": "1"
+  "legal_person_id": "1",
+  "value": 300
 }
 
 ###
@@ -56,7 +57,8 @@ Content-Type: application/json
 {
   "title": "Treino de lançamento de pesos",
   "description": "Treino de lançamento de pesos",
-  "legal_person_id": "2"
+  "legal_person_id": "2",
+  "value": 500
 }
 
 ###
@@ -73,8 +75,8 @@ POST http://localhost:3333/api/v1/assess
 Content-Type: application/json
 
 {
-  "fisical_person_id": "1",
-  "service_id": "1",
+  "fisical_person_id": "2",
+  "service_id": "2",
   "value": "5"
 }
 
