@@ -7,21 +7,13 @@ export default class Service {
       .select("*")
       .where("id", id)) as IService[];
 
-    const hireList = await connection("hire")
-      .select("*")
-      .where("service_id", id);
-
-    const assessValue = await connection("assess")
-      .select("value", "service_id")
-      .where("service_id", id)
-      .avg({ avg: "value" });
-
     const service = serviceList[0];
+    const { assess_value, hire_number } = await this.extraAttributes(id);
 
     return {
       ...service,
-      hire_number: hireList.length,
-      assess_value: assessValue[0].avg,
+      assess_value,
+      hire_number,
     };
   }
 
@@ -41,5 +33,21 @@ export default class Service {
       console.warn(error);
       return false;
     }
+  }
+
+  async extraAttributes(id: number) {
+    const hireList = await connection("hire")
+      .select("*")
+      .where("service_id", id);
+
+    const assessValue = await connection("assess")
+      .select("value", "service_id")
+      .where("service_id", id)
+      .avg({ avg: "value" });
+
+    return {
+      hire_number: hireList.length,
+      assess_value: assessValue[0].avg as number,
+    };
   }
 }
