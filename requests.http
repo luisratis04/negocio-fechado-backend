@@ -64,3 +64,21 @@ Content-Type: application/json
   "user": "luis.ratis04@gmail.com",
   "password": "senhaincorreta"
 }
+
+###
+GET http://localhost:3333/api/v1/login/legal-person
+Content-Type: application/json
+
+{
+  "user": "araujo@araujosuper.com.br",
+  "password": "507002"
+}
+
+###
+GET http://localhost:3333/api/v1/login/legal-person
+Content-Type: application/json
+
+{
+  "user": "araujo@araujosuper.com.br",
+  "password": "senhaincorreta"
+}

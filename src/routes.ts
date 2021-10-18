@@ -20,5 +20,6 @@ routes.post("/api/v1/service", serviceController.create);
 routes.post("/api/v1/hire", hireController.create);
 routes.post("/api/v1/assess", assessController.create);
 routes.get("/api/v1/login/fisical-person", loginController.loginFisicalPerson);
+routes.get("/api/v1/login/legal-person", loginController.loginLegalPerson);
 
 export default routes;
