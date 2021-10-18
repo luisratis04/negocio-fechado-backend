@@ -1,15 +1,18 @@
 import connection from "../database/connection";
-import { IService } from "../interfaces/service";
+import { IService, IServiceComplete } from "../interfaces/service";
 
 export default class Service {
-  async show(id: number): Promise<IService> {
+  async show(id: number): Promise<IServiceComplete> {
     const serviceList = (await connection("service")
       .select("*")
       .where("id", id)) as IService[];
 
+    const hireList = await connection("hire").select("*").where("service_id", id);
+    console.log(hireList)
+
     const service = serviceList[0];
 
-    return service;
+    return { ...service, hire_number: hireList.length };
   }
 
   async create({
