@@ -86,3 +86,7 @@ Content-Type: application/json
 ###
 GET http://localhost:3333/api/v1/service/1
 Content-Type: application/json
+
+###
+GET http://localhost:3333/api/v1/service
+Content-Type: application/json

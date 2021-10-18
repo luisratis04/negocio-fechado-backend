@@ -12,6 +12,13 @@ export default class ServiceController {
     return response.json({ ...service });
   }
 
+  async index(request: Request, response: Response) {
+    const serviceModel = new ServiceModel();
+    const services = await serviceModel.index();
+
+    return response.json({ services });
+  }
+
   async create(request: Request, response: Response) {
     const { title, description, legal_person_id } = request.body as IService;
     const serviceModel = new ServiceModel();

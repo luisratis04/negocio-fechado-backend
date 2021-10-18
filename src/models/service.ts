@@ -1,5 +1,9 @@
 import connection from "../database/connection";
-import { IService, IServiceComplete } from "../interfaces/service";
+import {
+  IService,
+  IServiceComplete,
+  IServiceWithId,
+} from "../interfaces/service";
 
 export default class Service {
   async show(id: number): Promise<IServiceComplete> {
@@ -15,6 +19,26 @@ export default class Service {
       assess_value,
       hire_number,
     };
+  }
+
+  async index(): Promise<IServiceComplete[]> {
+    const serviceList = (await connection("service").select(
+      "*"
+    )) as IServiceWithId[];
+
+    return await Promise.all(
+      serviceList.map(async (service) => {
+        const { assess_value, hire_number } = await this.extraAttributes(
+          service.id
+        );
+
+        return {
+          ...service,
+          assess_value,
+          hire_number,
+        };
+      })
+    );
   }
 
   async create({

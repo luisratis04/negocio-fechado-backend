@@ -15,11 +15,16 @@ const assessController = new AssessController();
 const loginController = new LoginController();
 
 routes.post("/api/v1/fisical-person", fisicalPersonController.create);
+
 routes.post("/api/v1/legal-person", legalPersonController.create);
+
 routes.get("/api/v1/service/:id", serviceController.show);
 routes.post("/api/v1/service", serviceController.create);
+routes.get("/api/v1/service", serviceController.index);
+
 routes.post("/api/v1/hire", hireController.create);
 routes.post("/api/v1/assess", assessController.create);
+
 routes.get("/api/v1/login/fisical-person", loginController.loginFisicalPerson);
 routes.get("/api/v1/login/legal-person", loginController.loginLegalPerson);
 
