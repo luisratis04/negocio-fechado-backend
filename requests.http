@@ -8,6 +8,16 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3333/api/v1/fisical-person
+Content-Type: application/json
+
+{
+  "name": "Luís Antônio",
+  "email": "luis.developer.ac@gmail.com",
+  "password": "luisdeveloper"
+}
+
+###
 POST http://localhost:3333/api/v1/legal-person
 Content-Type: application/json
 
@@ -19,6 +29,17 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3333/api/v1/legal-person
+Content-Type: application/json
+
+{
+  "name": "SBF COMERCIO DE PRODUTOS ESPORTIVOS LTDA",
+  "email": "centauro@centauroesportes.com",
+  "password": "24102007",
+  "cnpj": "06.347.409/0154-30"
+}
+
+###
 POST http://localhost:3333/api/v1/service
 Content-Type: application/json
 
@@ -26,6 +47,16 @@ Content-Type: application/json
   "title": "Venda de alimentos",
   "description": "O comércio varejista de mercadorias em geral, com predominância de produtos alimentícios é a classe que se encontram os supermercados (tecnicamente, com área de venda variando de trezentos a cinco mil metros quadrados). Atendem o público em geral, especialmente pessoas físicas. Apesar dos produtos alimentícios representarem a principal categoria comercial, também comercializam produtos de higiene e limpeza, vestuário, ferragens, utensílios domésticos e até mesmo eletroeletrônicos e eletrodomésticos.",
   "legal_person_id": "1"
+}
+
+###
+POST http://localhost:3333/api/v1/service
+Content-Type: application/json
+
+{
+  "title": "Treino de lançamento de pesos",
+  "description": "Treino de lançamento de pesos",
+  "legal_person_id": "2"
 }
 
 ###
@@ -84,7 +115,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3333/api/v1/service/1
+GET http://localhost:3333/api/v1/service/2
 Content-Type: application/json
 
 ###
