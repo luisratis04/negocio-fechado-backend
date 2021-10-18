@@ -82,3 +82,7 @@ Content-Type: application/json
   "user": "araujo@araujosuper.com.br",
   "password": "senhaincorreta"
 }
+
+###
+GET http://localhost:3333/api/v1/service/1
+Content-Type: application/json

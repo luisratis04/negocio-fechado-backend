@@ -2,6 +2,16 @@ import connection from "../database/connection";
 import { IService } from "../interfaces/service";
 
 export default class Service {
+  async show(id: number): Promise<IService> {
+    const serviceList = (await connection("service")
+      .select("*")
+      .where("id", id)) as IService[];
+
+    const service = serviceList[0];
+
+    return service;
+  }
+
   async create({
     title,
     description,
