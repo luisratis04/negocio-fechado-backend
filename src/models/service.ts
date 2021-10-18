@@ -7,12 +7,22 @@ export default class Service {
       .select("*")
       .where("id", id)) as IService[];
 
-    const hireList = await connection("hire").select("*").where("service_id", id);
-    console.log(hireList)
+    const hireList = await connection("hire")
+      .select("*")
+      .where("service_id", id);
+
+    const assessValue = await connection("assess")
+      .select("value", "service_id")
+      .where("service_id", id)
+      .avg({ avg: "value" });
 
     const service = serviceList[0];
 
-    return { ...service, hire_number: hireList.length };
+    return {
+      ...service,
+      hire_number: hireList.length,
+      assess_value: assessValue[0].avg,
+    };
   }
 
   async create({

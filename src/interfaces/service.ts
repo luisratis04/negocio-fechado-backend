@@ -6,4 +6,5 @@ export interface IService {
 
 export interface IServiceComplete extends IService {
   hire_number: number;
+  assess_value: number;
 }
