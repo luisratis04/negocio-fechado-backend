@@ -6,3 +6,14 @@ Content-Type: application/json
   "email": "luis.ratis04@gmail.com",
   "password": "luis.ratis04"
 }
+
+###
+POST http://localhost:3333/api/v1/legal-person
+Content-Type: application/json
+
+{
+  "name": "A. C. D. A. IMPORTACAO E EXPORTACAO LTDA",
+  "email": "araujo@araujosuper.com.br",
+  "password": "507002",
+  "cnpj": "16.513.207/0001-08"
+}
