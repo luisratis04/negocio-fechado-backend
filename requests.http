@@ -46,3 +46,21 @@ Content-Type: application/json
   "service_id": "1",
   "value": "4"
 }
+
+###
+GET http://localhost:3333/api/v1/login/fisical-person
+Content-Type: application/json
+
+{
+  "user": "luis.ratis04@gmail.com",
+  "password": "luis.ratis04"
+}
+
+###
+GET http://localhost:3333/api/v1/login/fisical-person
+Content-Type: application/json
+
+{
+  "user": "luis.ratis04@gmail.com",
+  "password": "senhaincorreta"
+}
