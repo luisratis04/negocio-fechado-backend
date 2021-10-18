@@ -36,3 +36,13 @@ Content-Type: application/json
   "service_id": "1",
   "fisical_person_id": "1"
 }
+
+###
+POST http://localhost:3333/api/v1/assess
+Content-Type: application/json
+
+{
+  "fisical_person_id": "1",
+  "service_id": "1",
+  "value": "4"
+}
